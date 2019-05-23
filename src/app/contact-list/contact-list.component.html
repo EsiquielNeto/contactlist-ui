@@ -1,0 +1,78 @@
+<div class="container">
+
+  <div class="container">
+    <div class="ui-g">
+      <form autocomplete="off" (ngSubmit)="searchContacts()">
+        <div class="ui-g-12">
+          <h1>Listagem de contatos</h1>
+        </div>
+
+        <div class="ui-g-12 ui-fluid">
+          <div class="ui-g-12 ui-md-3">
+            <label>Nome</label>
+            <input pInputText type="text" name="name" [(ngModel)]="filter.name">
+          </div>
+
+          <div class="ui-g-12 ui-md-3">
+            <label>Sobre Nome</label>
+            <input pInputText type="text" name="lastName" [(ngModel)]="filter.lastName">
+          </div>
+
+          <div class="ui-g-12 ui-md-3"> 
+            <label>Telefone</label>
+            <input pInputText type="text" name="telephone" [(ngModel)]="filter.telephone">
+          </div>
+
+          <div class="ui-g-12 ui-md-3" style="margin-top: 18px">
+              <button pButton type="submit" label="Pesquisar"></button>
+            </div>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="contacts" [responsive]="true" [lazy]="true" [paginator]="true" [rows]="filter.itemsPage"
+        [totalRecords]="totalRecords" (onLazyLoad)="changePage($event)" #contactGrid>
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="col-data-header">Código</th>
+            <th>Nome</th>
+            <th>Sobre Nome</th>
+            <th>Telefone</th>
+            <th class="col-buttons-header"></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-contact>
+          <tr>
+            <td class="col-data">{{ contact.id }}</td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.telephone }}</td>
+            <td class="col-buttons">
+              <button pButton icon="fa fa-pencil" [routerLink]="['/contatos', contact.id]"></button>
+              <button pButton icon="fa fa-trash" (click)="dialogDelete(contact)"></button>
+            </td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="3">
+              Nenhum contato encontrado...
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div class="ui-g-12">
+      <a pButton label="Novo Contato" routerLink="/contatos/novo"></a>
+    </div>
+  </div>
+
+</div>

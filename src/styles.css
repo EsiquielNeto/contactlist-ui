@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #404C51;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+    margin: 0 auto;
+  }
+}
+
+label {
+  font-weight: bold;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+table > button {
+  margin: 2px;
+}
+
+.col-data-header {
+  width: 100px;
+}
+
+.col-data {
+  width: 100px;
+}
+
+.col-buttons-header {
+  width: 110px;
+}
+
+.col-buttons {
+  width: 110px;
+  text-align: center;
+}
+
+.buttons-form > button{
+  margin: 2px;
+  float: right;
+}
+
+.buttons-form > a{
+  margin-top: 9px;
+  margin-right: 2px; 
+  float: right;
+}

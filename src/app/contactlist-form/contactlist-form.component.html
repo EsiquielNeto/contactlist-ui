@@ -1,0 +1,47 @@
+<div class="container">
+    <form autocomplete="off" (ngSubmit)="save()" [formGroup]="contactForm">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <h1>Formulario de contatos</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Nome</label>
+                <input pInputText type="text" name="name" formControlName="name">
+            </div>
+
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Sobre Nome</label>
+                <input type="text" pInputText name="lastName" formControlName="lastName">
+            </div>
+
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Telefone</label>
+                <!-- <input type="text" pInputText name="telephone" formControlName="telephone"> -->
+                <p-inputMask name="telephone" formControlName="telephone" mask="(99) 9 9999-9999"></p-inputMask>
+            </div>
+
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>E-mail</label>
+                <input type="text" pInputText name="email" formControlName="email">
+            </div>
+
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Twitter</label>
+                <input type="text" pInputText name="twitter" formControlName="twitter">
+            </div>
+
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Skype</label>
+                <input type="text" pInputText name="skype" formControlName="skype">
+            </div>
+
+            <div class="ui-g-12 buttons-form">
+                <button pButton type="submit" label="Salvar" [disabled]="contactForm.invalid"></button>
+                <button pButton type="button" label="Novo" (click)="newContact()"></button>
+                <a routerLink="/contatos">Voltar para a pesquisa</a>
+            </div>
+
+        </div>
+    </form>
+</div>

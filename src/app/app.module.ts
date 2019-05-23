@@ -1,18 +1,52 @@
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { InputTextModule}  from 'primeng/inputtext';
+import { InputMaskModule } from 'primeng/inputmask';
+import { MessageService}  from 'primeng/api';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+
 import { AppComponent } from './app.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactsService } from './service/contacts.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ContactlistFormComponent } from './contactlist-form/contactlist-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactListComponent,
+    NavbarComponent,
+    ContactlistFormComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+
+    ButtonModule,
+    ConfirmDialogModule,
+    InputTextModule,
+    InputMaskModule,
+    TableModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [
+    ContactsService,
+    ConfirmationService,
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
