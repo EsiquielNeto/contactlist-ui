@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
+import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule}  from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { MessageService}  from 'primeng/api';
@@ -39,6 +40,7 @@ import { MessageComponent } from './message/message.component';
 
     ButtonModule,
     ConfirmDialogModule,
+    FileUploadModule,
     InputTextModule,
     InputMaskModule,
     TableModule,

@@ -47,6 +47,10 @@ export class ContactsService {
     return this.http.get<Contact>(`${this.urlContact}/${id}`);
   }
 
+  uploadPhoto(): string {
+    return `${this.urlContact}/upload-photo`;
+  }
+
   save(contact: Contact): Observable<Contact> {
     return this.http.post<Contact>(`${this.urlContact}`, contact);
   }

@@ -45,6 +45,10 @@ table > button {
   text-align: center;
 }
 
+.buttons > .ui-button .ui-widget .ui-state-default .ui-corner-all .ui-button-icon-only {
+  margin: 1 px !important;
+}
+
 .buttons-form > button{
   margin: 2px;
   float: right;
