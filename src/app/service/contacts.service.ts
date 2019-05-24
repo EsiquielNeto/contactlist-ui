@@ -14,12 +14,9 @@ export class ContactsService {
 
   constructor(private http: HttpClient) { }
 
-  filterContacts(filter: ContactFilter): Promise<any> {
+  filterContacts(filter: ContactFilter): Observable<any[]> {
     let params = new HttpParams({
-      fromObject: {
-        page: filter.page.toString(),
-        size: filter.itemsPage.toString()
-      }
+      fromObject: {}
     });
 
     if (filter.name) {
@@ -34,18 +31,16 @@ export class ContactsService {
       params = params.append('telephone', filter.telephone);
     }
 
-    return this.http.get<any>(`${this.urlContact}`, { params })
-      .toPromise()
-      .then(response => {
-        const contacts = response.content;
+    return this.http.get<any[]>(`${this.urlContact}`, { params });
+      /*.toPromise()
+      .then(response => { contacts = response;
 
         const data = {
-          contacts,
-          total: response.totalElements
+          contacts
         };
 
         return data;
-      });
+      });*/
   }
 
   findById(id: number): Observable<Contact> {

@@ -19,13 +19,15 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactsService } from './service/contacts.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactlistFormComponent } from './contactlist-form/contactlist-form.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
     NavbarComponent,
-    ContactlistFormComponent
+    ContactlistFormComponent,
+    MessageComponent
   ],
   imports: [
     AppRoutingModule,

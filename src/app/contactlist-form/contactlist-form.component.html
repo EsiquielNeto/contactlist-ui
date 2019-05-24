@@ -2,33 +2,40 @@
     <form autocomplete="off" (ngSubmit)="save()" [formGroup]="contactForm">
         <div class="ui-g">
             <div class="ui-g-12">
-                <h1>Formulario de contatos</h1>
+                <h1>{{ editing ? 'Edição de' : 'Novo' }} Contatos</h1>
             </div>
 
             <div class="ui-g-12 ui-md-4 ui-fluid">
                 <label>Nome</label>
                 <input pInputText type="text" name="name" formControlName="name">
-            </div>
+
+                <app-message [control]="contactForm.get('name')" error="required" text="Informe o nome"></app-message>            </div>
 
             <div class="ui-g-12 ui-md-4 ui-fluid">
                 <label>Sobre Nome</label>
                 <input type="text" pInputText name="lastName" formControlName="lastName">
+
+                <app-message [control]="contactForm.get('lastName')" error="required" text="Informe o sobre nome">
+                </app-message>
             </div>
 
             <div class="ui-g-12 ui-md-4 ui-fluid">
                 <label>Telefone</label>
-                <!-- <input type="text" pInputText name="telephone" formControlName="telephone"> -->
-                <p-inputMask name="telephone" formControlName="telephone" mask="(99) 9 9999-9999"></p-inputMask>
+                <p-inputMask name="telephone" formControlName="telephone" mask="(99) 9 9999-9999" unmask="()-"></p-inputMask>
+
+                <app-message [control]="contactForm.get('telephone')" error="required" text="Informe o telefone"></app-message>
             </div>
 
             <div class="ui-g-12 ui-md-4 ui-fluid">
                 <label>E-mail</label>
                 <input type="text" pInputText name="email" formControlName="email">
+
+                <app-message [control]="contactForm.get('email')" error="email" text="E-mail inválido"></app-message>
             </div>
 
             <div class="ui-g-12 ui-md-4 ui-fluid">
                 <label>Twitter</label>
-                <input type="text" pInputText name="twitter" formControlName="twitter">
+                <p-inputMask name="twitter" formControlName="twitter" mask="@*********"></p-inputMask>
             </div>
 
             <div class="ui-g-12 ui-md-4 ui-fluid">

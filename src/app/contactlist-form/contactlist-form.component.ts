@@ -1,7 +1,7 @@
 import { Contact } from './../model/Contact';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ContactsService } from '../service/contacts.service';
 import { MessageService } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
@@ -45,10 +45,10 @@ export class ContactlistFormComponent implements OnInit {
   configureContactForm(){
     this.contactForm = this.formBuilder.group({
       id: [],
-      name: [],
-      lastName: [],
-      email: [],
-      telephone: [],
+      name: [null, Validators.required],
+      lastName: [null, Validators.required],
+      email: [null, Validators.email],
+      telephone: [null, Validators.required],
       twitter: [],
       skype: [],
       photo: []
@@ -77,7 +77,7 @@ export class ContactlistFormComponent implements OnInit {
         } catch (error) {
 
         }
-      });
+      }, error => console.log(error));
   }
 
   update() {
