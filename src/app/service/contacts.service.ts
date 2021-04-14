@@ -32,15 +32,6 @@ export class ContactsService {
     }
 
     return this.http.get<any[]>(`${this.urlContact}`, { params });
-      /*.toPromise()
-      .then(response => { contacts = response;
-
-        const data = {
-          contacts
-        };
-
-        return data;
-      });*/
   }
 
   findById(id: number): Observable<Contact> {

@@ -21,6 +21,7 @@ import { ContactsService } from './service/contacts.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactlistFormComponent } from './contactlist-form/contactlist-form.component';
 import { MessageComponent } from './message/message.component';
+import { ErroHandlerComponent } from './erro-handler/erro-handler.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MessageComponent } from './message/message.component';
     ContactListComponent,
     NavbarComponent,
     ContactlistFormComponent,
-    MessageComponent
+    MessageComponent,
+    ErroHandlerComponent
   ],
   imports: [
     AppRoutingModule,

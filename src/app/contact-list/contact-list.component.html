@@ -34,7 +34,8 @@
 
   <div class="ui-g">
     <div class="ui-g-12">
-      <p-table [value]="contacts" [responsive]="true" [paginator]="true" [rows]="5" #contactGrid>
+      <p-table [value]="contacts"
+      [responsive]="true" [paginator]="true" [rows]="5" #contactGrid>
 
         <ng-template pTemplate="header">
           <tr>
@@ -70,7 +71,7 @@
             <td>{{ contact.telephone }}</td>
             <td class="col-buttons">
                   <button pButton icon="fa fa-pencil" [routerLink]="['/contatos', contact.id]"></button>
-                  <button pButton icon="fa fa-trash" (click)="dialogDelete(contact)" style="margin-left: 3px;"></button>
+                  <button pButton icon="fa fa-trash" (click)="dialogDelete" style="margin-left: 3px;"></button>
             </td>
           </tr>
         </ng-template>

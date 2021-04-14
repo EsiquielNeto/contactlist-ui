@@ -69,7 +69,7 @@ export class ContactlistFormComponent implements OnInit {
 
   Added() {
     this.contactService.save(this.contactForm.value)
-      .subscribe(response => {
+      .subscribe((response) => {
         try {
           this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Contato adicionado com sucesso!' });
 
